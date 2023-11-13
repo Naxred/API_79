@@ -1,0 +1,17 @@
+C:\Users\Issac.Reyna\Desktop\Archivos\LTI\ProgramacionDistribuida\PIA\Codigo\API_79\BLL\bin\Debug\net6.0\BLL.deps.json
+C:\Users\Issac.Reyna\Desktop\Archivos\LTI\ProgramacionDistribuida\PIA\Codigo\API_79\BLL\bin\Debug\net6.0\BLL.dll
+C:\Users\Issac.Reyna\Desktop\Archivos\LTI\ProgramacionDistribuida\PIA\Codigo\API_79\BLL\bin\Debug\net6.0\BLL.pdb
+C:\Users\Issac.Reyna\Desktop\Archivos\LTI\ProgramacionDistribuida\PIA\Codigo\API_79\BLL\bin\Debug\net6.0\DAL.dll
+C:\Users\Issac.Reyna\Desktop\Archivos\LTI\ProgramacionDistribuida\PIA\Codigo\API_79\BLL\bin\Debug\net6.0\MODELS.dll
+C:\Users\Issac.Reyna\Desktop\Archivos\LTI\ProgramacionDistribuida\PIA\Codigo\API_79\BLL\bin\Debug\net6.0\DAL.pdb
+C:\Users\Issac.Reyna\Desktop\Archivos\LTI\ProgramacionDistribuida\PIA\Codigo\API_79\BLL\bin\Debug\net6.0\MODELS.pdb
+C:\Users\Issac.Reyna\Desktop\Archivos\LTI\ProgramacionDistribuida\PIA\Codigo\API_79\BLL\obj\Debug\net6.0\BLL.csproj.AssemblyReference.cache
+C:\Users\Issac.Reyna\Desktop\Archivos\LTI\ProgramacionDistribuida\PIA\Codigo\API_79\BLL\obj\Debug\net6.0\BLL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Issac.Reyna\Desktop\Archivos\LTI\ProgramacionDistribuida\PIA\Codigo\API_79\BLL\obj\Debug\net6.0\BLL.AssemblyInfoInputs.cache
+C:\Users\Issac.Reyna\Desktop\Archivos\LTI\ProgramacionDistribuida\PIA\Codigo\API_79\BLL\obj\Debug\net6.0\BLL.AssemblyInfo.cs
+C:\Users\Issac.Reyna\Desktop\Archivos\LTI\ProgramacionDistribuida\PIA\Codigo\API_79\BLL\obj\Debug\net6.0\BLL.csproj.CoreCompileInputs.cache
+C:\Users\Issac.Reyna\Desktop\Archivos\LTI\ProgramacionDistribuida\PIA\Codigo\API_79\BLL\obj\Debug\net6.0\BLL.csproj.CopyComplete
+C:\Users\Issac.Reyna\Desktop\Archivos\LTI\ProgramacionDistribuida\PIA\Codigo\API_79\BLL\obj\Debug\net6.0\BLL.dll
+C:\Users\Issac.Reyna\Desktop\Archivos\LTI\ProgramacionDistribuida\PIA\Codigo\API_79\BLL\obj\Debug\net6.0\refint\BLL.dll
+C:\Users\Issac.Reyna\Desktop\Archivos\LTI\ProgramacionDistribuida\PIA\Codigo\API_79\BLL\obj\Debug\net6.0\BLL.pdb
+C:\Users\Issac.Reyna\Desktop\Archivos\LTI\ProgramacionDistribuida\PIA\Codigo\API_79\BLL\obj\Debug\net6.0\ref\BLL.dll
