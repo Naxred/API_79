@@ -3,6 +3,7 @@ using DAL;
 using MODELS;
 using System.Data.SqlClient;
 using System.Collections.Generic;
+using Microsoft.IdentityModel.Tokens;
 
 namespace BLL
 {
@@ -101,11 +102,47 @@ namespace BLL
             return enuAlumnos;
         }
 
+        public static IEnumerable<DtoCatAlumnos> GetAlumnoTexto(string PCadena, string Texto)
+        {
+            IEnumerable<DtoCatAlumnos> enuAlumnos = Enumerable.Empty<DtoCatAlumnos>();
+
+            var dpParametros = new
+            {
+                P_Accion = 5,
+                P_IdAlumno = 0,
+                P_CURP = "",
+                P_Texto = Texto
+
+            };
+
+            DataTable Dt = Contexto.Funcion_StoreDB(PCadena, "spAlumnoCON", dpParametros);
+
+            if (Dt.Rows.Count > 0)
+            {
+                enuAlumnos = (from item in Dt.AsEnumerable()
+                              select new DtoCatAlumnos
+                              {
+                                  IdAlumno = item.Field<Int32>("IdAlumno"),
+                                  Nombre = item.Field<string>("Nombre"),
+                                  ApPaterno = item.Field<string>("ApPaterno"),
+                                  ApMaterno = item.Field<string>("ApMaterno"),
+                                  CURP = item.Field<string>("CURP"),
+                                  FechaNacimiento = item.Field<string>("FechaNacimiento"),
+                                  Estado = item.Field<string>("Estado")
+
+                              }).AsEnumerable();
+            }
+
+            return enuAlumnos;
+        }
+
         public static IEnumerable<string> ValidaInfoGuardar(string PCadena, DtoAltAlumnos Alumno)
         {
             List<string> lstValidacion = new List<string>();
 
             DateTime fechaNacimiento;
+
+            Alumno.CURP = Alumno.CURP.Trim();
 
             if (Alumno.Nombre.Length <= 2)
             {
@@ -123,6 +160,11 @@ namespace BLL
             }
 
             if (Alumno.CURP.Length != 18)
+            {
+                lstValidacion.Add("El CURP debe de contener 18 caracteres");
+            }
+
+            if (string.IsNullOrEmpty(Alumno.CURP))
             {
                 lstValidacion.Add("El CURP debe de contener 18 caracteres");
             }
@@ -165,6 +207,8 @@ namespace BLL
 
             DateTime fechaNacimiento;
 
+            Alumno.CURP = Alumno.CURP.Trim();
+
             if (Alumno.Nombre.Length <= 2)
             {
                 lstValidacion.Add("Debe ingresar un nombre");
@@ -181,6 +225,11 @@ namespace BLL
             }
 
             if (Alumno.CURP.Length != 18)
+            {
+                lstValidacion.Add("El CURP debe de contener 18 caracteres");
+            }
+
+            if (string.IsNullOrEmpty(Alumno.CURP))
             {
                 lstValidacion.Add("El CURP debe de contener 18 caracteres");
             }
@@ -262,11 +311,11 @@ namespace BLL
             {
                 var dpParametros = new
                 {
-                    P_Nombre = Alumno.Nombre,
-                    P_APaterno = Alumno.ApPaterno,
-                    P_AMaterno = Alumno.ApMaterno,
-                    P_CURP = Alumno.CURP,
-                    P_FechNac = Alumno.FechNac
+                    P_Nombre = Alumno.Nombre.Trim(),
+                    P_APaterno = Alumno.ApPaterno.Trim(),
+                    P_AMaterno = Alumno.ApMaterno.Trim(),
+                    P_CURP = Alumno.CURP.Trim(),
+                    P_FechNac = Alumno.FechNac 
                 };
                 Contexto.Procedimiento_StoreDB(PCadena, "spAlumnoALT", dpParametros);
                 lstDatos.Add("00");
@@ -291,10 +340,10 @@ namespace BLL
                 var dpParametros = new
                 {
                     P_IdAlumno = Alumno.IdAlumno,
-                    P_Nombre = Alumno.Nombre,
-                    P_APaterno = Alumno.ApPaterno,
-                    P_AMaterno = Alumno.ApMaterno,
-                    P_CURP = Alumno.CURP,
+                    P_Nombre = Alumno.Nombre.Trim(),
+                    P_APaterno = Alumno.ApPaterno.Trim(),
+                    P_AMaterno = Alumno.ApMaterno.Trim(),
+                    P_CURP = Alumno.CURP.Trim(),
                     P_FechNac = Alumno.FechNac
                 };
                 Contexto.Procedimiento_StoreDB(PCadena, "spAlumnoACT", dpParametros);

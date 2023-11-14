@@ -45,6 +45,15 @@ namespace API_79.Controllers
             return Ok(new { Respuesta = enuAlumnos });
         }
 
+        [HttpPost]
+        [Route("GetAlumnoTexto")]
+
+        public IActionResult GetAlumnoTexto([FromBody] DtoBusquedaAlumno Alumno)
+        {
+            IEnumerable<DtoCatAlumnos> enuAlumnos = BLL.BL_ALUMNOS.GetAlumnoTexto(Cadena, Alumno.Texto);
+            return Ok(new { Respuesta = enuAlumnos });
+        }
+
 
         [HttpPost]
         [Route("GuardarAlumno")]
@@ -60,7 +69,7 @@ namespace API_79.Controllers
 
                 if (enuDatos.ToList()[0]=="00") 
                 {
-                    var twilioService = new BL_TwilioSmsService("AC693bf4696ec5c8f4d1f71f40a827cb26", "546d0b405cfbdada8a46b242573d7208", "+15597427032");
+                    var twilioService = new BL_TwilioSmsService("AC693bf4696ec5c8f4d1f71f40a827cb26", "bf26ae0ee8bee0d22c815289884f4b20", "+15597427032");
                     twilioService.SendSms("+528117044637", "Alumno nuevo registrado");
                     return Ok(new {Code = enuDatos.ToList()[0], Respuesta = enuDatos.ToList()[1] });    
                 }
